@@ -1,0 +1,75 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~assets/css/bootstrap.css';
+@import '~assets/css/bootstrap-grid.css';
+@import '~assets/css/bootstrap-reboot.css';
+@import '~assets/css/deeppurple-amber.css';
+ngb-carousel {
+    /*width: 800px;*/
+    margin: auto;
+}
+.fixed-top{
+    position: relative;
+}
+
+footer {
+    bottom: 1px;
+    position: relative;
+}
+app-root {
+    min-height: 100%;
+}
+
+
+carousel-item{
+    margin: auto;
+}
+
+.item{
+    margin: auto;
+}
+small{
+    font-size: 9px;
+}
+.nav-item:hover .dropdown-menu{
+    display: block;
+}
+
+/*.hover:hover{
+    transform: scale(1.1);
+    transition: ease-in-out;
+}*/
+
+#contactusmap {
+height: 10em;
+}
+
+    
+*{
+    font-size: 12px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+p{
+    text-align: justify;
+}
+p.hover:hover{
+    font-size: 1.2%;
+}
+
+ul.list-footer{
+    color: #0275d8;
+    list-style: none;
+}
+.list-footer:focus li{
+    color: #014c8c;
+    text-decoration: underline;
+}
+
+md-card, .card{
+    box-shadow: 1px darkblue;
+}
+
+.dropdown-menu{
+    top: 2em;
+
+}

@@ -1,0 +1,115 @@
+<!-- Page heading -->
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <a routerLink="/">
+        <img src="assets/images/logo.png" width="80%" class="img img-fluid" (mouseleave)="onmouseenter()" (mouseenter)="onmouseenter()"
+          [@hover]="mouseOnLogo">
+      </a>
+    </div>
+    <div class="col-7">
+      <img class="img img-fluid" src="assets/images/company.png" alt="Dynamic Group of Foundations">
+    </div>
+    <div class="col-3">
+      <md-card class=" float-right">
+        ✉️ <a href="mailto:info@dynamicgroupoffoundations.org"><small>info@dynamicgroupoffoundations.org</small></a>
+        <span *ngFor="let contact of contacts"><br><small>📞 <a href="tel:{{contact.number}}">{{contact.number}}</a></small></span>
+      </md-card>
+
+    </div>
+  </div>
+</div>
+<!-- Navigation -->
+<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+    aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#">DGF</a>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item dropdown ">
+          <a class="nav-link dropdown-toggle" href="#" routerLink="/" id="homeMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Home <span class="sr-only">(current)</span></a>
+          <div class="dropdown-menu" aria-labelledby="homeMenu">
+            <a class="dropdown-item" routerLink="/organisation_profile">Organizational Profile</a>
+            <!--<a class="dropdown-item">Financial Summary</a>
+            <a class="dropdown-item">FCRA</a>
+            <a class="dropdown-item">Bankers & Auditors</a>-->
+            <a class="dropdown-item" routerLink="/adminlegal_details">Administrative & Legal Details</a>
+            <a class="dropdown-item" routerLink="/organisation_structure">Organizational Structure</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown ">
+          <a class="nav-link dropdown-toggle" href="#" id="whatwedo" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">What We Do</a>
+          <div class="dropdown-menu" aria-labelledby="whatwedo">
+            <a class="dropdown-item">Health</a>
+            <a class="dropdown-item">Education</a>
+            <a class="dropdown-item">Socio-economic</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown ">
+          <a class="nav-link dropdown-toggle" href="#" id="getInvolved" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Get Involved</a>
+          <div class="dropdown-menu" aria-labelledby="getInvolved">
+            <a class="dropdown-item">Volunteer</a>
+            <a class="dropdown-item">Donate</a>
+            <a class="dropdown-item">Sponsor a child</a>
+            <!--<a class="dropdown-item">Friends of DGoF</a>-->
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="projects" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Projects</a>
+          <div class="dropdown-menu" aria-labelledby="projects">
+            <a class="dropdown-item">Health</a>
+            <a class="dropdown-item">Economic</a>
+            <a class="dropdown-item">Education</a>
+            <a class="dropdown-item">Social</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="careers" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Careers</a>
+          <div class="dropdown-menu" aria-labelledby="careers">
+            <a class="dropdown-item">Vacancies</a>
+            <a class="dropdown-item">Apply Now</a>
+            <a class="dropdown-item">Notice Board</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown ">
+          <a class="nav-link dropdown-toggle" href="#" id="gallery" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Gallery</a>
+          <div class="dropdown-menu" aria-labelledby="gallery">
+            <a class="dropdown-item">Desk of CEO</a>
+            <a class="dropdown-item">Desk of Project Manager</a>
+            <a class="dropdown-item">Staff Members</a>
+            <a class="dropdown-item">Campaigns</a>
+            <a class="dropdown-item">Health Camps</a>
+            <a class="dropdown-item">Charity Campaigns</a>
+            <a class="dropdown-item">Trainings</a>
+            <a class="dropdown-item">Socio-economic Development</a>
+            <a class="dropdown-item">Educational</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" routerLink="./contactus" id="contactus" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">Contact Us</a>
+            <div class="dropdown-menu" aria-labelledby="contactus">
+              <a class="dropdown-item" routerLink="/complaints_suggestions">Complaints & Suggestions</a>
+            </div>
+        </li>
+      </ul>
+    </div>
+</nav>
+
+<hr>
+
+<!-- Page body -->
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
+
+<hr>
+<!-- Page footer -->
+<footer>
+  <app-footer>Loading.</app-footer>
+</footer>

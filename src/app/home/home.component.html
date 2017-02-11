@@ -1,0 +1,49 @@
+<div style="height: 15%; overflow: hidden">
+  <carousel>
+    <slide *ngFor="let image of carousal_images">
+      <img src={{image.url}} alt="Random first slide" class="img img-fluid">
+      <div class="carousel-caption">
+        <h3>{{image.title}}</h3>
+        <p style="text-align: center">{{image.caption}}</p>
+      </div>
+    </slide>
+  </carousel>
+</div>
+<hr>
+
+<md-grid-list cols="3" rowHeight="380px">
+  <md-grid-tile *ngFor="let image of highlight_images">
+    <md-card>
+      <img md-card-image src={{image.url}} class="img img-fluid">
+      <md-card-title>
+        <h5>{{image.title}}</h5>
+      </md-card-title>
+      <md-card-actions>
+        <a href="#">Read more...</a>
+      </md-card-actions>
+    </md-card>
+  </md-grid-tile>
+</md-grid-list>
+<hr>
+<blockquote class="blockquote lead" style="font-size: 14px;" (mouseleave)="onmouseenter()" (mouseenter)="onmouseenter()" [@hover]="hover">{{visionText}}</blockquote>
+
+<div class="card" style="width: 20rem;" *ngIf="false">
+  <h4 class="card-title">Project Implementation Calendar</h4>
+  <div style="min-height:290px;">
+    <datepicker [(ngModel)]="dt" [minDate]="minDate" [showWeeks]="true" [dateDisabled]="dateDisabled"></datepicker>
+  </div>
+</div>
+<hr>
+<div>
+  <h3>Project Implementation Calendar</h3>
+  <table class="table  table-sm ">
+    <thead class="thead-default">
+      <th>#</th>
+      <th>Project Name</th>
+      <th>Target Groups</th>
+      <th>Target Area</th>
+      <th>Location</th>
+      <th>Implementation Date</th>
+    </thead>
+  </table>
+</div>

@@ -1,0 +1,13 @@
+import { Component, Input, trigger, transition, state, style, animate } from '@angular/core';
+
+export const animations = [trigger('hover', [
+      state('off', style({
+        transform: 'scale(1)'
+      })),
+      state('on', style({
+        transform: 'scale(1.1)'
+      })),
+      transition('off => on', animate('100ms ease-in')),
+      transition('on => off', animate('100ms ease-out'))
+    ]),
+    ]

@@ -1,0 +1,32 @@
+<h2><strong>Only for site administrators</strong></h2>
+<tabset>
+  <tab heading='Communications'>
+    <div *ngFor="let alert of alerts">
+      <alert [type]="alert.type" dismissible="true">{{ alert.msg }}</alert>
+    </div>
+    <div class="container" >
+      <div class="col-4">
+        <md-card>
+          <md-card-title>
+            Contacts:
+          </md-card-title>
+          <form novalidate [formGroup]="addContact" (submit)="submitContact()" class="form">
+            <md-input-container>
+              <input md-input type="tel" placeholder="Contact Number" formControlName="number">
+            </md-input-container>
+            <input type="submit" [disabled]="!addContact.valid" value="Add" class="btn btn-primary">
+          </form>
+          <ul class="list-group">
+            <li *ngFor="let contact of contacts, let i = index">
+              {{contact.number}} <span class="close" (click)="deleteContact(contact._id, i)">x</span>
+            </li>
+          </ul>
+        </md-card>
+      </div>
+    </div>
+  </tab>
+  <tab>
+    <template tabHeading>Images</template>
+    <input type="file" value="Carousal Images">
+  </tab>
+</tabset>

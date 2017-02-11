@@ -1,0 +1,30 @@
+<md-card>
+  <md-card-title>Complaints & Suggestions</md-card-title>
+  <form #cform="ngForm" (ngSubmit)="submit(cform)">
+    <md-input-container><input md-input ngModel name="firstName" placeholder="First Name" required></md-input-container>
+    <md-input-container><input md-input ngModel name="middleName" placeholder="Middle Name" required></md-input-container>
+    <md-input-container><input md-input ngModel name="lastName" placeholder="Last Name" required></md-input-container>
+    <br>
+    <md-input-container><input md-input ngModel name="houseNo" placeholder="House Number" required></md-input-container>
+    <md-input-container><input md-input ngModel name="roomNo" placeholder="Room Number"></md-input-container>
+    <br>
+    <md-input-container><input md-input ngModel name="district" placeholder="District" required></md-input-container>
+    <md-input-container><input md-input ngModel name="state" placeholder="State" required></md-input-container>
+    <md-input-container><input md-input ngModel name="country" placeholder="Country" required></md-input-container>
+    <md-input-container><input md-input ngModel name="pincode" placeholder="Pin Code" required></md-input-container>
+    <br>
+    <md-input-container><input md-input ngModel name="email" placeholder="Email" type="email" required></md-input-container>
+    <md-input-container><input md-input ngModel name="phone" placeholder="Phone Number" type="tel"></md-input-container>
+    <br>
+    <md-input-container><input md-input ngModel name="subject" placeholder="Subject" required></md-input-container>
+    <br>
+    <md-input-container>
+      <textarea md-input ngModel name="body" placeholder="Maximum 250 letters. Please do not use abusive language." rows="4"
+        cols="60em">
+        </textarea>
+    </md-input-container>
+    <md-card-actions>
+      <button md-fab type="submit">Send</button>
+    </md-card-actions>
+  </form>
+</md-card>
