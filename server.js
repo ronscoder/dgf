@@ -9,7 +9,7 @@ var express = require("express");
 var fs = require('fs');
 
 var app = express();
-
+app.use(express.static(__dirname + "/dist"));
 app.use(express.static(__dirname + "/under_construction"));
 app.use(function (req, res, next) {
     res.header("Access-Control-Allow-Origin", "http://localhost:4200");
@@ -19,11 +19,11 @@ app.use(function (req, res, next) {
 });
 
 
-// app.get('/', (req, res)=>{
-//     // res.sendFile('dist/index.html');
-//     res.sendFile(__dirname + '/under_construction/index.html');
-// });
 app.get('/', (req, res) => {
+    res.sendFile('dist/index.html');
+    //     res.sendFile(__dirname + '/under_construction/index.html');
+});
+app.get('/under', (req, res) => {
     res.sendFile(__dirname + '/under_construction/index.html');
     // res.sendFile('under_construction/index.html');
 });
