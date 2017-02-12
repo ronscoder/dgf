@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, NgForm } from '@angular/forms';
 import { Http } from '@angular/http';
+import { MdDialog, MdDialogConfig, MdDialogContent, MdSnackBar, MdSnackBarConfig } from '@angular/material';
+import { WaitComponent, ResponseComponent } from '../common/common.component';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-complaints',
   templateUrl: './complaints.component.html',
@@ -9,7 +12,10 @@ import { Http } from '@angular/http';
 export class ComplaintsComponent implements OnInit {
   complaintForm: FormGroup = null;
   constructor(
-    private http: Http
+    private http: Http,
+    private _dialog: MdDialog,
+    private _snack: MdSnackBar,
+    private router: Router
   ) {
     this.complaintForm = new FormGroup({
 
@@ -41,11 +47,37 @@ export class ComplaintsComponent implements OnInit {
       html: `<p>${values['body']}</p><hr><small>${userdata}</small>`
     };
     console.log(mailOptions);
+    // let diagConfig = new MdDialogConfig();
+    // let diagContent = new MdDialogContent();
+    // let dialogRef = this._dialog.open(WaitComponent)
+    let snackConfig = new MdSnackBarConfig();
+    let snackRef = this._snack.open("Please wait. Sending mail...")
     this.http.post('/sendmail', mailOptions).subscribe(
       (response) => {
         console.log(response);
-
+        // dialogRef.close();
+        snackRef.dismiss();
+        ResponseComponent.satt = "Thank you! We will get to you soon!";
+        ResponseComponent.nextAction = "Redirecting to home...";
+        let dref = this._dialog.open(ResponseComponent);
+        setTimeout(() => {
+          dref.close();
+          this.router.navigateByUrl("");
+        }, 3000);
+      },
+      (error) => {
+        snackRef.dismiss();
       }
     )
+  }
+  test() {
+
+    ResponseComponent.satt = "Thank you! We will get to you soon!";
+    let dref = this._dialog.open(ResponseComponent);
+    setTimeout(() => {
+      dref.close();
+      this.router.navigateByUrl("");
+    }, 2000);
+
   }
 }

@@ -48,17 +48,6 @@ export class Disclaimer {
   }
 }
 
-@Component({
-  template: `
-  <md-card style="margin:auto">
-  <p>Please wait</p>
-      <md-spinner></md-spinner>
-      </md-card>
-  `
-})
-export class WaitComponent {
-
-}
 
 @Component({
   templateUrl: './privacy.html'

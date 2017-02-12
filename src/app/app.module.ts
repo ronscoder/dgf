@@ -18,7 +18,7 @@ import { AlertModule } from 'ng2-bootstrap';
 import { DataServiceService } from './data-service.service';
 import { ContactusComponent } from './contactus/contactus.component';
 import {
-  FooterComponent, Disclaimer, WaitComponent,
+  FooterComponent, Disclaimer,
   Privacy,
   Terms
 } from './footer/footer.component';
@@ -28,6 +28,7 @@ import {
 }
   from './organsation-structure/organsation.component';
 import { ComplaintsComponent } from './complaints/complaints.component';
+import { WaitComponent, ResponseComponent } from './common/common.component';
 
 
 @NgModule({
@@ -39,14 +40,15 @@ import { ComplaintsComponent } from './complaints/complaints.component';
     FooterComponent,
     Disclaimer,
     WaitComponent,
+    ResponseComponent,
     Privacy,
     Terms,
     OrgansationStructureComponent,
     AdminLegalDetailsComponent,
     OrganProfile,
-    ComplaintsComponent
+    ComplaintsComponent,
   ],
-  entryComponents: [Disclaimer, WaitComponent, Privacy, Terms],
+  entryComponents: [Disclaimer, WaitComponent, Privacy, Terms, ResponseComponent],
   imports: [
     BrowserModule,
     FormsModule,
