@@ -1,3 +1,4 @@
+'use strict';
 // var Engine = require('tingodb')();
 var assert = require('assert');
 
@@ -64,3 +65,34 @@ function getBody(req, cb) {
         cb(JSON.parse(body));
     });
 }
+
+
+const nodemailer = require('nodemailer');
+
+app.post('/sendmail', (req, res) => {
+    getBody(req, (body) => {
+        _sendMail(body, (error, info) => {
+            if (error) {
+                console.log(error);
+                res.send(error);
+            }
+            console.log(info);
+            res.send(info);
+        });
+    });
+});
+
+function _sendMail(maildata, cb) {
+    let transporter = nodemailer.createTransport({
+        service: "Zoho",
+        auth: {
+            user: 'site@dynamicgroupoffoundations.org',
+            pass: 'dyno@2017'
+        }
+    });
+    console.log(maildata);
+    transporter.sendMail(maildata, (error, info)=>{
+        cb(error, info);
+    });
+};
+
