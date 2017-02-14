@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
-import { DataServiceService, StaticData } from '../data-service.service';
+import { DataServiceService } from '../data-service.service';
 @Component({
   selector: 'app-organsation-structure',
   templateUrl: './organsation-structure.component.html',
@@ -29,14 +29,17 @@ export class AdminLegalDetailsComponent implements OnInit {
 @Component({
   templateUrl: './organ_profile.html'
 })
-export class OrganProfile implements OnInit{
-  boardMembers=[];
-  memberHeading=[];
+export class OrganProfile implements OnInit {
+  boardMembers = [];
+  memberHeading = [];
   constructor(
-    private http: Http
-  ){}
-  ngOnInit(){
-    this.boardMembers = StaticData.boardMembers.data;
-    this.memberHeading = StaticData.boardMembers.heading;
+    private data: DataServiceService
+  ) { }
+  ngOnInit() {
+    this.data.getBoardMembers().subscribe((values) => {
+      this.boardMembers = values;
+    })
+    // this.boardMembers = StaticData.boardMembers.data;
+    // this.memberHeading = StaticData.boardMembers.heading;
   }
 }

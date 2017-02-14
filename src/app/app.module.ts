@@ -30,6 +30,14 @@ import {
 import { ComplaintsComponent } from './complaints/complaints.component';
 import { WaitComponent, ResponseComponent } from './common/common.component';
 
+import { AngularFireModule } from 'angularfire2'
+export const afconfig = {
+  apiKey: "AIzaSyDY96w9z7LWcH8tl0LuD__u3atYnohuC_I",
+  authDomain: "dynogroup-1f713.firebaseapp.com",
+  databaseURL: "https://dynogroup-1f713.firebaseio.com",
+  storageBucket: "dynogroup-1f713.appspot.com",
+  messagingSenderId: "79128301483"
+};
 
 @NgModule({
   declarations: [
@@ -61,6 +69,7 @@ import { WaitComponent, ResponseComponent } from './common/common.component';
     TabsModule.forRoot(),
     AlertModule.forRoot(),
     AppRoutingModule,
+    AngularFireModule.initializeApp(afconfig)
   ],
   providers: [DataServiceService],
   bootstrap: [AppComponent]

@@ -21,10 +21,12 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.data.getCarousal().subscribe((value) => {
-      this.carousal_images.push(value)
+      // console.log(value);
+      this.carousal_images = value;
+      // console.log(this.carousal_images);
     });
     this.data.getHighlights().subscribe((value) => {
-      this.highlight_images.push(value)
+      this.highlight_images = value
     });
     this.data.getVisionText().subscribe((value) => {
       this.visionText = value;

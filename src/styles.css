@@ -30,14 +30,16 @@ carousel-item{
 small{
     font-size: 9px;
 }
-.nav-item:hover .dropdown-menu{
+.nav-item:hover > .dropdown-menu{
     display: block;
 }
-
-/*.hover:hover{
-    transform: scale(1.1);
-    transition: ease-in-out;
+/*.nav-item:active > .dropdown-menu{
+    display: none;
 }*/
+.dropdown-item:active > .dropdown-menu{
+    display: none;
+}
+
 
 #contactusmap {
 height: 10em;

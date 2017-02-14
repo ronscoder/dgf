@@ -16,11 +16,14 @@
     <md-input-container><input md-input ngModel name="email" placeholder="Email" type="email" required></md-input-container>
     <md-input-container><input md-input ngModel name="phone" placeholder="Phone Number" type="tel"></md-input-container>
     <br>
-    <md-input-container><input md-input ngModel name="subject" placeholder="Subject" required></md-input-container>
+    <md-input-container style="width:100ch">
+      <input md-input ngModel name="subject" placeholder="Subject" required>
+      </md-input-container>
     <br>
     <md-input-container>
-      <textarea md-input ngModel name="body" placeholder="Maximum 250 letters. Please do not use abusive language." rows="4"
-        cols="60em">
+      <textarea md-input ngModel name="body" placeholder="Maximum 250 letters. Please do not use abusive language." rows="4" cols="100em"
+        maxlength="250" #message>
+        <md-hint align="end">{{message.characterCount}} / 250</md-hint>
         </textarea>
     </md-input-container>
     <md-card-actions>
