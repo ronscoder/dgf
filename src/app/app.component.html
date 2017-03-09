@@ -1,23 +1,27 @@
 <!-- Page heading -->
-<div class="container">
-  <div class="row">
-    <div class="col">
-      <a routerLink="/">
-        <img src="assets/images/logo.png" width="80%" class="img img-fluid" (mouseleave)="onmouseenter()" (mouseenter)="onmouseenter()"
-          [@hover]="mouseOnLogo">
-      </a>
-    </div>
-    <div class="col-7">
-      <img class="img img-fluid" src="assets/images/company.png" alt="Dynamic Group of Foundations">
-    </div>
-    <div class="col-3">
-      <md-card class=" float-right" style="text-align: right">
-        <a href="mailto:info@dynamicgroupoffoundations.org"><small>✉️ info@dynamicgroupoffoundations.org</small></a>
-        <span *ngFor="let contact of contacts"><br><small>📞 <a href="tel:{{contact.number}}">{{contact.number}}</a></small></span>
-      </md-card>
-
-    </div>
-  </div>
+<style>
+  
+  .img_head_logo {
+    width: auto;
+    max-height: 10em;
+  }
+  
+  .header {
+    height: 10em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+</style>
+<div class="header">
+  <a routerLink="/">
+    <img src="assets/images/logo.png" class="img_head_logo" (mouseleave)="onmouseenter()" (mouseenter)="onmouseenter()" [@hover]="mouseOnLogo">
+  </a>
+  <img class="img img-fluid" src="assets/images/company.png" alt="Dynamic Group of Foundations">
+  <md-card style="text-align: right">
+    <a href="mailto:info@dynamicgroupoffoundations.org"><small>✉️ info@dynamicgroupoffoundations.org</small></a>
+    <span *ngFor="let contact of contacts"><br><small>📞 <a href="tel:{{contact.number}}">{{contact.number}}</a></small></span>
+  </md-card>
 </div>
 <!-- Navigation -->
 <ul *ngIf="false">
