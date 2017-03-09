@@ -49,9 +49,10 @@ export class ComplaintsComponent implements OnInit {
     // let diagConfig = new MdDialogConfig();
     // let diagContent = new MdDialogContent();
     // let dialogRef = this._dialog.open(WaitComponent)
+    let mail_url = 'https://dynogroup.herokuapp.com'
     let snackConfig = new MdSnackBarConfig();
     let snackRef = this._snack.open("Please wait. Sending mail...")
-    this.http.post('/sendmail', mailOptions).subscribe(
+    this.http.post(mail_url + '/sendmail', mailOptions).subscribe(
       (response) => {
         console.log(response);
         // dialogRef.close();
