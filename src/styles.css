@@ -15,10 +15,6 @@ footer {
     bottom: 1px;
     position: relative;
 }
-app-root {
-    min-height: 100%;
-}
-
 
 carousel-item{
     margin: auto;
@@ -47,15 +43,17 @@ height: 10em;
 
     
 *{
+    font-size: 14px;
+    font-family: Helvetica,Arial , sans-serif;
+    color: #333;
+}
+projects{
+    font-family: Courier New, Courier, monospace;
     font-size: 12px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 p{
     text-align: justify;
-}
-p.hover:hover{
-    font-size: 1.2%;
 }
 
 ul.list-footer{
@@ -68,10 +66,44 @@ ul.list-footer{
 }
 
 md-card, .card{
-    box-shadow: 1px darkblue;
+    box-shadow: 1px;
 }
 
 .dropdown-menu{
     top: 2em;
 
 }
+
+nav{
+    box-shadow: 1px 1px 3px;
+}
+.nav-items a{
+    font-size: 14px;
+}
+
+  .img_head_logo {
+    max-height: 10em;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+  }
+  
+  @media screen and (max-width: 416px){
+    .header img.img_company{
+        display: none;
+    }
+  }
+
+    @media screen and (max-width: 900px){
+    .header img.img_company{
+        width: 40%;
+    }
+  }
+
+  h1, h2, h3{
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  }

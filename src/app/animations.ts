@@ -5,7 +5,7 @@ export const animations = [trigger('hover', [
         transform: 'scale(1)'
       })),
       state('on', style({
-        transform: 'scale(1.1)'
+        transform: 'scale(1.05)'
       })),
       transition('off => on', animate('100ms ease-in')),
       transition('on => off', animate('100ms ease-out'))

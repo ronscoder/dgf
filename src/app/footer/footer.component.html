@@ -1,28 +1,22 @@
-<div class="container">
-  <md-grid-list cols="4" rowHeight="10em" style="overflow: auto">
-    <md-grid-tile>
-      <ul class="list-footer">
-        <li>
-          <a style="cursor: pointer" class="link" (click)="disclaimer()"><small>Disclaimer</small></a>
-        </li>
-        <li>
-          <a style="cursor: pointer" class="link" (click)="privacy()"><small>Privacy Policy</small></a>
-        </li>
-        <li>
-          <a style="cursor: pointer" class="link" (click)="terms()"><small>Terms & Conditions</small></a>
-        </li>
-      </ul>
-    </md-grid-tile>
-    <md-grid-tile>
-      <div>
-        <ul class="list-footer">
-          <li style="padding: 2px">
-            <a href="#" routerLink="./admin"><small>Site admin</small></a>
-          </li>
-          <li style="padding: 2px"><a href="#"><small>Site Developer</small></a></li>
-        </ul>
-      </div>
-    </md-grid-tile>
-  </md-grid-list>
-  <p class="text-center">&copy; <small>Dynamic Group of Foundations</small></p>
+<div style="display: flex; justify-content: space-around">
+  <ul class="list-footer">
+    <li>
+      <a style="cursor: pointer" class="link" (click)="disclaimer()"><small>Disclaimer</small></a>
+    </li>
+    <li>
+      <a style="cursor: pointer" class="link" (click)="privacy()"><small>Privacy Policy</small></a>
+    </li>
+    <li>
+      <a style="cursor: pointer" class="link" (click)="terms()"><small>Terms & Conditions</small></a>
+    </li>
+  </ul>
+  <div>
+    <ul class="list-footer">
+      <li style="padding: 2px">
+        <a href="#" routerLink="./admin"><small>Site admin</small></a>
+      </li>
+      <li style="padding: 2px"><a href="#"><small>Site Developer</small></a></li>
+    </ul>
+  </div>
 </div>
+<p class="text-center">&copy; <small>Dynamic Group of Foundations</small></p>

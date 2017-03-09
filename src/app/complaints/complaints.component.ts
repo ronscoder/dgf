@@ -6,8 +6,7 @@ import { WaitComponent, ResponseComponent } from '../common/common.component';
 import { Router } from '@angular/router';
 @Component({
   selector: 'app-complaints',
-  templateUrl: './complaints.component.html',
-  styleUrls: ['./complaints.component.css']
+  templateUrl: './complaints.component.html'
 })
 export class ComplaintsComponent implements OnInit {
   complaintForm: FormGroup = null;

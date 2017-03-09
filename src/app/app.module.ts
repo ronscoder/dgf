@@ -30,7 +30,10 @@ import {
 import { ComplaintsComponent } from './complaints/complaints.component';
 import { WaitComponent, ResponseComponent } from './common/common.component';
 
-import { AngularFireModule } from 'angularfire2'
+import { AngularFireModule } from 'angularfire2';
+import { initializeApp } from 'firebase';
+import { ProjectsComponent } from './projects/projects.component';
+import { ProjectComponent } from './projects/project/project.component'
 export const afconfig = {
   apiKey: "AIzaSyDY96w9z7LWcH8tl0LuD__u3atYnohuC_I",
   authDomain: "dynogroup-1f713.firebaseapp.com",
@@ -55,6 +58,8 @@ export const afconfig = {
     AdminLegalDetailsComponent,
     OrganProfile,
     ComplaintsComponent,
+    ProjectsComponent,
+    ProjectComponent,
   ],
   entryComponents: [Disclaimer, WaitComponent, Privacy, Terms, ResponseComponent],
   imports: [
@@ -69,6 +74,7 @@ export const afconfig = {
     TabsModule.forRoot(),
     AlertModule.forRoot(),
     AppRoutingModule,
+    // initializeApp(afconfig),
     AngularFireModule.initializeApp(afconfig)
   ],
   providers: [DataServiceService],

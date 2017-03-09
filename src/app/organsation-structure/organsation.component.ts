@@ -25,7 +25,7 @@ export class OrgansationStructureComponent implements OnInit {
           data.addRows(
             res.json()
           );
-
+          // data.setProperty('style', 'border: none');
           // Create the chart.
           var chart = new google.visualization.OrgChart(document.getElementById('org_struct'));
           // Draw the chart, setting the allowHtml option to true for the tooltips.
@@ -33,8 +33,6 @@ export class OrgansationStructureComponent implements OnInit {
         });
       }
     )
-
-
   }
 }
 
